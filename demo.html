@@ -1,0 +1,278 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML AND JAVASCRIPT ASSIGNMENT</title>
+<style>
+    body{
+        margin:0;
+        padding:0;
+        height:100%;
+    }
+    body
+    {
+        background-image:url(http://www.mywbut.com/images/quick_quiz.jpg);
+
+        background-repeat:no-repeat;
+        background-size:100% 50%;
+    }
+
+    h1 {
+        font-family: fantasy;
+        font-style:normal;
+        font-size: xx-large;
+        color: #5753ff;
+        text-align: left;
+        width: 100%;
+        height:50px;
+
+    }
+    h2{
+        color: blue;
+        text-align: center;
+    }
+
+
+    li {
+        font-family: "Times New Roman";
+        font-size: 20px;
+        color: hotpink;
+    }
+   ul li{
+       font-family: "Times New Roman";
+       font-size: 18px;
+       color: darkred;
+   }
+
+    .button {
+        display: inline-block;
+        padding: 5px 8px;
+        font-size: 24px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: #4CAF50;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+    }
+
+    .button:hover {background-color: #3e8e41}
+
+    .button:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+
+    #texta{
+        color: darkblue;
+
+    }
+</style>
+    
+<script>
+
+    var text2display="";
+    var answers=new Array(6);
+    answers[0]="q1]  You Are WRONG...  The right answer is:IP stands for Internet Protocol\n";
+    answers[1]="q2]  You Are WRONG...  The right answer is:HyperText Markup Language\n";
+    answers[2]="q3]  You Are WRONG...  The right answer is:Division by zero\n";
+    answers[3]="q4]  You Are WRONG...  The right answer is:if(a!==null)\n";
+    answers[4]="q5]  You Are WRONG...  The right answer is:Both a and b are equal in value and type.\n";
+    answers[5]="q6]  You Are WRONG...  The right answer is:Both a & b are correct.\n";
+    answers[6]="q7]  You Are WRONG...  The right answer is:join()\n";
+    answers[7]="q8]  You Are WRONG...  The right answer is:window.print();\n";
+    answers[8]="q9]  You Are WRONG...  The right answer is:yes\n";
+    answers[9]="q10]  You Are WRONG...  The right answer is:unless border is set to zero\n";
+
+    var questions =new Array(6);
+    questions[0]="q1";
+    questions[1]="q2";
+    questions[2]="q3";
+    questions[3]="q4";
+    questions[4]="q5";
+    questions[5]="q6";
+    questions[6]="q7";
+    questions[7]="q8";
+    questions[8]="q9";
+    questions[9]="q10";
+    var k;
+function checkq(k)
+{
+  var qs=document.getElementsByName(k);
+    var noofRadios=qs.length;
+
+    for(var i=0;i<noofRadios;i++)
+    {
+        if(qs[i].checked)
+        {
+            if(qs[i].value=="correct") {
+                text2display = text2display + k + "]. CORRECT ANSWER!!!\n";
+
+            }
+            else
+                text2display =text2display + answers[questions.indexOf(k)];
+
+        }
+
+
+    }
+}
+    function checkall()
+    {
+        for(var i=0;i<questions.length;i++)
+        {
+            checkq(questions[i]);
+        }
+        quiz.answersbox.value +=text2display;
+    }
+
+
+</script>
+</head>
+<body>
+
+<form name="quiz" method="post">
+
+<h1>HTML &nbsp; AND &nbsp;   JAVASCRIPT &nbsp;  </h1>
+
+
+    <ol>
+        <li>
+            The title tag belongs where in your HTML ?
+        </li>
+        <ul>
+            <li> <input type="radio" name="q1" value="correct" >head</li>
+            <li><input type="radio" name="q1" value="wrong">arm</li>
+            <li ><input type="radio" name="q1" value="wrong" >body</li>
+            <li ><input type="radio" name="q1" value="wrong" >table</li>
+        </ul>
+        <br>
+
+        <li>
+             What is HTML?
+        </li>
+        <ul>
+            <li ><input type="radio" name="q2" value="wrong" >HyperText marked language</li>
+            <li><input type="radio" name="q2" value="wrong">HyperText marks language</li>
+            <li ><input type="radio" name="q2" value="correct" >None of these</li>
+            <li ><input type="radio" name="q2" value="wrong" >Both are correct</li>
+        </ul>
+        <br>
+
+        <li>
+            Which of the following is not considered as an error in javascript?
+        </li>
+        <ul>
+            <li ><input type="radio" name="q3" value="wrong" >Syntax error</li>
+            <li><input type="radio" name="q3" value="wrong">Missing of semicolon</li>
+            <li ><input type="radio" name="q3" value="correct" >Division by zero</li>
+            <li ><input type="radio" name="q3" value="wrong" >All of the above</li>
+        </ul>
+        <br>
+
+
+        <li>
+            The snippet that has to be used to check "a" is not equal to "null" is:
+        </li>
+        <ul>
+            <li ><input type="radio" name="q4" value="wrong" >if(a!=null)</li>
+            <li><input type="radio" name="q4" value="wrong">if (!a)</li>
+            <li ><input type="radio" name="q4" value="wrong" >if(a!null)</li>
+            <li ><input type="radio" name="q4" value="correct" >if(a!==null)</li>
+        </ul>
+        <br>
+
+        <li>
+            The statement a===b refers to
+        </li>
+        <ul>
+            <li ><input type="radio" name="q5" value="wrong" >Both a and b are equal in value, type and reference address</li>
+            <li><input type="radio" name="q5" value="correct">Both a and b are equal in value and type</li>
+            <li ><input type="radio" name="q5" value="wrong" >Both a and b are equal in value</li>
+            <li ><input type="radio" name="q5" value="wrong" >There is no such statement</li>
+        </ul>
+        <br>
+
+        <li>
+            Assume that we have to convert ?false? that is a non-string to string.This can be done by:
+        </li>
+        <ul>
+            <li ><input type="radio" name="q6" value="wrong" >false.toString()</li>
+            <li><input type="radio" name="q6" value="wrong">String(false)</li>
+            <li ><input type="radio" name="q6" value="wrong" >String newvariable=?false?</li>
+            <li ><input type="radio" name="q6" value="correct" >Both a and b</li>
+        </ul>
+        <br>
+
+        <li>
+            Which of the following function of Array object joins all elements of an array into a string?
+        </li>
+        <ul>
+            <li ><input type="radio" name="q7" value="wrong" >concat()</li>
+            <li><input type="radio" name="q7" value="correct">join()</li>
+            <li ><input type="radio" name="q7" value="wrong" >combine()</li>
+            <li ><input type="radio" name="q7" value="wrong" >map()</li>
+        </ul>
+        <br>
+
+        <li>
+            Which of the following is the correct syntax to print a page using JavaScript?
+        </li>
+        <ul>
+            <li ><input type="radio" name="q8" value="wrong" >document.print();</li>
+            <li><input type="radio" name="q8" value="wrong">browser.print();</li>
+            <li ><input type="radio" name="q8" value="correct">window.print();</li>
+            <li ><input type="radio" name="q8" value="wrong" >navigate.print();</li>
+        </ul>
+        <br>
+
+        <li>
+            Can you pass a anonymous function as an argument to another function?
+        </li>
+        <ul>
+            <li ><input type="radio" name="q9" value="correct" >Yes</li>
+            <li><input type="radio" name="q9" value="wrong">No</li>
+            <li ><input type="radio" name="q9" value="wrong" >Sometimes</li>
+
+        </ul>
+        <br>
+
+        <li>
+            When images are used as links in html5 they get a blue border.
+        </li>
+        <ul>
+            <li ><input type="radio" name="q10" value="wrong" >yes.it is default</li>
+            <li><input type="radio" name="q10" value="wrong">never</li>
+            <li ><input type="radio" name="q10" value="correct" >unless border is set to zero</li>
+
+        </ul>
+        <br>
+
+
+
+
+    </ol>
+
+    <div>
+        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+  <input type="button" class="button" value="SUBMIT" onclick="checkall()" style="width:10%;height: 100%;color: mediumvioletred">
+
+        &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+          <input type="reset" class="button" value="CLEAR" style="width:10%;height: 100%;color: crimson">
+    </div>
+
+
+    <div align="right" id="texta">
+
+        <textarea name="answersbox" rows="20" cols="100" style="color: darkblue;font-size: large;font-family: monospace">ANSWERS WILL BE DISPLAYED HERE ONCE YOU CLICK SUBMIT!!!</textarea>
+    </div>
+
+</form>
+</body>
+</html>
